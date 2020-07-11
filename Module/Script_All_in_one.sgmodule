@@ -1,5 +1,6 @@
 #!name=Script - All in one
-#!desc=该模块为脚本合集,用于Remove Ads + unlock vip.#!system=ios
+#!desc=该模块为脚本合集,用于Remove Ads + unlock vip.
+#!system=ios
 [General]
 # > 优酷 去广告
 force-http-engine-hosts = %APPEND% vali.cp31.ott.cibntv.net
