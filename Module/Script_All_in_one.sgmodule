@@ -100,7 +100,7 @@ bilibili live = type=http-response,requires-body=1,max-size=0,pattern=https://ap
 Kuwo.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/KuWoMusicDownload.js,type=http-request,pattern=^https?:\/\/musicpay\.kuwo.cn\/music\.pay\?uid=\d+
 Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Kuwo.js,type=http-response,pattern=^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
 # > VSCO滤镜VIP
-vsco.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/vsco.js,type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/
+vsco.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/QuantumultX/File/vsco.js,type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/
 # > 大片-视频编辑器 VIP
 dapian.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/dapian.js,type=http-response,pattern=^https?:\/\/api\.vnision\.com\/v1\/(users\/|banners)
 # > WPS (By eHpo)
@@ -132,6 +132,10 @@ fantastical.js = requires-body=1,max-size=0,script-path=https://raw.githubuserco
 rrtv.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/rrtv.js,type=http-response,pattern=^https:\/\/api\.rr\.tv(\/user\/privilege\/list|\/ad\/getAll|\/rrtv-video\/v4plus\/season\/detail)
 # > WPS (By eHpo1)
 Wps.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
+# Splice 视频编辑器 pro
+Splice.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/Surge/JS/Splice.js,type=http-response,pattern=^https:\/\/splice\.oracle\.\w+\.com\/devices\/me
+# Keep 解锁私人课程和动作库 (QX存在bug 该脚本可能无法生效)
+Keep.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/Surge/JS/Keep.js,type=http-response,pattern=^https:\/\/api\.gotokeep\.com\/(.+\/subject|.+\/dynamic)
 
 # Chavy box (多账号Cookie保存切换)
 # 访问: https://8.8.8.8/home管理
