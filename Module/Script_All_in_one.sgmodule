@@ -103,8 +103,6 @@ Kuwo.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.c
 vsco.js = requires-body=1,script-path=https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/QuantumultX/File/vsco.js,type=http-response,pattern=^https?:\/\/vsco\.co\/api\/subscriptions\/2.1\/user-subscriptions\/
 # > 大片-视频编辑器 VIP
 dapian.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/dapian.js,type=http-response,pattern=^https?:\/\/api\.vnision\.com\/v1\/(users\/|banners)
-# > WPS (By eHpo)
-Wps.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js,type=http-response,pattern=^https://account.wps.*/api/users/
 # Termius 解锁本地pro  (By Maasea)
 Termius.js = requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Termius.js,type=http-response,pattern=https:\/\/api\.termius\.com\/api\/v3\/bulk\/account\/
 # 彩云天气 Vip
