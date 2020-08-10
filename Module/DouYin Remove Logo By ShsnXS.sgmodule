@@ -1,7 +1,6 @@
 #!name=DouYin Remove Logo
 #!desc=该模块用于抖音去Logo.
 #!system=ios
-[General]
 
 [URL Rewrite]
 # > 抖音 去广告&水印
