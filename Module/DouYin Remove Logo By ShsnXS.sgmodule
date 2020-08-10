@@ -24,4 +24,3 @@ douyin_hot = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v
 
 [MITM]
 hostname = %APPEND% 8.8.8.8, *.googlevideo.com,118.89.204.198, trade-acs.m.taobao.com, app.flashdown365.com, api.m.jd.com, ios.prod.ftl.netflix.com, api.interpreter.caiyunai.com, mubu.com, pan.baidu.com, api.rr.tv,m.client.10010.com,www.baidu.com2.club, api.shimo.im, *.videostarapp.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, www.zhihu.com, api.zhihu.com, link.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, *.tiktokv.com, p.du.163.com, vsco.co, r.inews.qq.com, account.wps.*, api.termius.com, biz.caiyunapp.com, spclient.wg.spotify.com, api.sync.me, lambda.us-east-1.amazonaws.com, api.tv.zing.vn, api.global.mp3.zing.vn, photos.adobe.io, mobile-api.adguard.com, lcs-mobile-cops.adobe.io, education.github.com, ssl-api.itranslateapp.com, splice.oracle.*.com, api.keepkeep.com
-© 2020 GitHub, Inc.
