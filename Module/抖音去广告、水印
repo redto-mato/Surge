@@ -1,0 +1,28 @@
+#!name=Script - All in one
+#!desc=该模块为脚本合集,用于Remove Ads + unlock vip.
+#!system=ios
+[General]
+
+[URL Rewrite]
+# > 抖音 去广告&水印
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/feed\/ https://aweme.snssdk.com/aweme/v1/feed/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/aweme\/post\/ https://aweme.snssdk.com/aweme/v1/aweme/post/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/follow\/feed\/ https://aweme.snssdk.com/aweme/v1/follow/feed/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/nearby\/feed\/ https://aweme.snssdk.com/aweme/v1/nearby/feed/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/search\/item\/ https://aweme.snssdk.com/aweme/v1/search/item/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/general\/search\/single\/ https://aweme.snssdk.com/aweme/v1/general/search/single/ header
+^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
+
+[Script]
+# > 抖音 & TikTok Remove Ad & Logo
+douyin_post = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme/v1/aweme\/post\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_feed = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_follow = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/follow\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_naerby = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/nearby\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_item = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/search\/item\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_search = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/general\/search\/single\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+douyin_hot = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/hot\/search\/video\/list\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
+
+[MITM]
+hostname = %APPEND% 8.8.8.8, *.googlevideo.com,118.89.204.198, trade-acs.m.taobao.com, app.flashdown365.com, api.m.jd.com, ios.prod.ftl.netflix.com, api.interpreter.caiyunai.com, mubu.com, pan.baidu.com, api.rr.tv,m.client.10010.com,www.baidu.com2.club, api.shimo.im, *.videostarapp.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, www.zhihu.com, api.zhihu.com, link.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, *.tiktokv.com, p.du.163.com, vsco.co, r.inews.qq.com, account.wps.*, api.termius.com, biz.caiyunapp.com, spclient.wg.spotify.com, api.sync.me, lambda.us-east-1.amazonaws.com, api.tv.zing.vn, api.global.mp3.zing.vn, photos.adobe.io, mobile-api.adguard.com, lcs-mobile-cops.adobe.io, education.github.com, ssl-api.itranslateapp.com, splice.oracle.*.com, api.keepkeep.com
+© 2020 GitHub, Inc.
