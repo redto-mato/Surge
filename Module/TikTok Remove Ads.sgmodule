@@ -1,17 +1,15 @@
 #!name=JP&Aweme&TikTok
-#!desc=日本抖音去广告、去水印，TikTok区域解所
+#!desc=抖音、TikTok去广告、去水印，TikTok区域解锁
 #!system=ios
 
 [Rule]
 #RULE-SET,https://raw.githubusercontent.com/maicoo-l/Surge/master/rules/media/TikTok.list
 
 [URL Rewrite]
-# TikTok 解锁、去水印
+# > TikTok 解锁、去水印
 (?<=_region=)CN(?=&) JP 307
-
 (?<=&app_version=)16..(?=.?.?&) 1 307
 (?<=\?version_code=)16..(?=.?.?&) 1 307
-
 (.*video_id=\w{32})(.*watermark=)(.*) $1 302
 
 # > 抖音 去广告&水印
@@ -24,8 +22,6 @@
 ^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
 
 [Script]
-# 抖音 & TikTok去广告&水印 = type=http-response,pattern=^https:\/\/.*\.(amemv|musical)\.(com|ly)\/aweme\/v.*\/(feed|post),requires-body=1,max-size=0,script-path=https://choler.github.io/Surge/Script/Aweme.js
-# 抖音 & TikTok去广告&水印 = type=http-request,pattern=^https:\/\/.*\.(amemv|musical)\.(com|ly)\/aweme\/v.*\/(feed|post),requires-body=1,max-size=0,script-path=https://choler.github.io/Surge/Script/Aweme.js
 # > 抖音 & TikTok Remove Ad & Logo
 douyin_post = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme/v1/aweme\/post\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
 douyin_feed = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
