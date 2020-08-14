@@ -32,19 +32,6 @@ URL-REGEX,^https?:\/\/api\.rr\.tv\/(?:ad\/getAll$|storage/business/rootName/app/
 URL-REGEX,^http:\/\/vali\.cp31\.ott\.cibntv\.net\/youku\/,REJECT-TINYGIF
 
 [URL Rewrite]
-# > TikTok 解锁
-(?<=_region=)CN(?=&) JP 307
-(?<=&app_version=)16..(?=.?.?&) 1 307
-(?<=\?version_code=)16..(?=.?.?&) 1 307 
-# > 抖音 去广告&水印
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/feed\/ https://aweme.snssdk.com/aweme/v1/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/aweme\/post\/ https://aweme.snssdk.com/aweme/v1/aweme/post/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/follow\/feed\/ https://aweme.snssdk.com/aweme/v1/follow/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/nearby\/feed\/ https://aweme.snssdk.com/aweme/v1/nearby/feed/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/search\/item\/ https://aweme.snssdk.com/aweme/v1/search/item/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/general\/search\/single\/ https://aweme.snssdk.com/aweme/v1/general/search/single/ header
-^https?:\/\/[\w-]+\.amemv\.com\/aweme\/v\d\/hot/search\/video\/list\/ https://aweme.snssdk.com/aweme/v1/hot/search/video/list/ header
-
 # > Redirect Google Service
 ^https?:\/\/(www.)?g\.cn https:\/\/www.google.com 302
 ^https?:\/\/(www.)?google\.cn https:\/\/www.google.com 302
@@ -62,14 +49,6 @@ tb_price.js = requires-body=1,script-path=https://raw.githubusercontent.com/yich
 wb_launch.js = requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua)
 wb_ad.js = type=http-response,requires-body=1,max-size=-1,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list),script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
 # > Choler
-# > 抖音 & TikTok Remove Ad & Logo
-douyin_post = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme/v1/aweme\/post\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_feed = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_follow = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/follow\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_naerby = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/nearby\/feed\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_item = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/search\/item\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_search = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/general\/search\/single\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
-douyin_hot = type=http-response,pattern=^https?:\/\/aweme\.snssdk\.com\/aweme\/v1\/hot\/search\/video\/list\/,requires-body=1,max-size=-1,script-path=https://Choler.github.io/Surge/Script/douyin.js
 # > 微信公众号
 WeChat.js = script-path=https://Choler.github.io/Surge/Script/WeChat.js,type=http-request,pattern=^https://mp\.weixin\.qq\.com/mp/getappmsgad
 # > YouTube
@@ -112,4 +91,4 @@ Wps.js = requires-body=1,max-size=0,script-path=https://raw.githubusercontent.co
 Rewrite: BoxJs = type=http-request,pattern=^https?://boxjs.com(/api|/home|/sub|/my|/app|/log|/revert)?($|\/),script-path=https://gitee.com/chavyleung/scripts/raw/master/chavy.box.js, requires-body=true, timeout=120
 
 [MITM]
-hostname = %APPEND% 8.8.8.8, *.googlevideo.com, www.google.cn, 118.89.204.198, trade-acs.m.taobao.com, app.flashdown365.com, api.m.jd.com, ios.prod.ftl.netflix.com, api.interpreter.caiyunai.com, pan.baidu.com, api.rr.tv,www.baidu.com2.club, *.videostarapp.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, www.zhihu.com, api.zhihu.com, link.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, *.tiktokv.com, p.du.163.com, vsco.co, account.wps.*, biz.caiyunapp.com, spclient.wg.spotify.com, api.sync.me, lambda.us-east-1.amazonaws.com, api.tv.zing.vn, api.global.mp3.zing.vn, photos.adobe.io, mobile-api.adguard.com, lcs-mobile-cops.adobe.io, education.github.com, splice.oracle.*.com, api.keepkeep.com
+hostname = %APPEND% 8.8.8.8, *.googlevideo.com, www.google.cn, 118.89.204.198, trade-acs.m.taobao.com, app.flashdown365.com, api.m.jd.com, ios.prod.ftl.netflix.com, api.interpreter.caiyunai.com, pan.baidu.com, api.rr.tv,www.baidu.com2.club, *.videostarapp.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, mp.weixin.qq.com, www.zhihu.com, api.zhihu.com, link.zhihu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, *.kuwo.cn, vip1.kuwo.cn, p.du.163.com, vsco.co, account.wps.*, biz.caiyunapp.com, spclient.wg.spotify.com, api.sync.me, lambda.us-east-1.amazonaws.com, api.tv.zing.vn, api.global.mp3.zing.vn, photos.adobe.io, mobile-api.adguard.com, lcs-mobile-cops.adobe.io, education.github.com, splice.oracle.*.com, api.keepkeep.com
